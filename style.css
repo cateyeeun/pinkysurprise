@@ -35,7 +35,7 @@ header {
   justify-content: center;
   min-height: 100vh;
   /* min-width: 100%; */
-  margin: 5%;
+  /* margin: 5%; */
   /* background-color: #b3f0fb; */
 }
 
@@ -107,7 +107,7 @@ section {
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
-  margin: 5%;
+  /* margin: 5%; */
   /* background-color: #b9657b; */
 }
 
