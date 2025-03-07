@@ -5,101 +5,113 @@ warna biru pastel #b3f0fb
 warna pink pastel #f6c2ce
  */
 
- :root {
-    --cream: #fff9f0;
-    --cream-t: #fff9f0c0;
-    --pt: #b9657b;
-    --pp: #f6c2ce;
-    --bp: #b3f0fb;
- }
+:root {
+  --cream: #fff9f0;
+  --cream-t: #fff9f0c0;
+  --pt: #b9657b;
+  --pp: #f6c2ce;
+  --bp: #b3f0fb;
+}
 
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
- }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
 
- body {
-    font-family: "Chewy", sans-serif;
-    background: url('./file-index/index-background.gif') no-repeat center fixed;
-    background-size: cover;
-    backdrop-filter: blur(3px);
- }
+body {
+  font-family: "Chewy", sans-serif;
+  background: url("./file-index/index-background.gif") no-repeat center fixed;
+  background-size: cover;
+  backdrop-filter: blur(3px);
+}
 
- header {
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1.5rem;
- }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* min-width: 100%; */
+  margin: 5%;
+  /* background-color: #b3f0fb; */
+}
 
- header .photo {
-    width: 40%;
-    margin: 0 6rem;
-    padding: 0;
- }
+header .photo {
+  padding: 0 2rem 0 5rem;
+  /* background-color: #b9657b; */
+}
 
- header .photo img {
-    width: 100%;
-    height: 100%;
- }
+header .photo img {
+  width: 25rem;
+}
 
- header .title {
-     font-size: 3.5rem;
-     margin-right: 1rem;
- }
+header .title {
+  /* background-color: blueviolet; */
+  /* display: flex; */
+  /* margin-right: 1%; */
+  padding-left: 1.4rem;
+  padding-right: 5rem;
+}
 
- header .title .t-h1 span{
-    font-weight: 400;
-    color: var(--cream);
-    -webkit-text-stroke: 0.3rem var(--pt);
-    text-shadow: 8px 8px 16px var(--pt);
-    display: inline-block;
+header .title .t-h1 {
+  font-size: 6.9rem;
+  color: var(--cream);
+  -webkit-text-stroke: 0.3rem var(--pt);
+  text-shadow: 8px 8px 16px var(--pt);
+  text-align: left;
+  font-weight: 400;
+}
+
+header .title .t-h1 span {
+  display: inline-block;
+  margin: 0 4px;
+  opacity: 0;
+  transform: scale(-1);
+  white-space: nowrap;
+}
+
+@keyframes growText {
+  from {
     opacity: 0;
     transform: scale(-1);
-    white-space: pre;
- }
-
- @keyframes growText {
-   from {
-      opacity: 0;
-      transform: scale(-1);
   }
   to {
-      opacity: 1;
-      transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
   }
- }
+}
 
- header > div {
-   transform: scale(0);
-   opacity: 0;
-   animation: grow 0.5s ease-out forwards;
- }
+header > div {
+  transform: scale(0);
+  opacity: 0;
+  animation: grow 0.5s ease-out forwards;
+}
 
- @keyframes grow {
-   from {
-      transform: scale(0);
-      opacity: 0;
-   }
-   to {
-      transform: scale(1);
-      opacity: 1;
-   }
- }
- 
- section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
- }
+@keyframes grow {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
- section > div {
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 5%;
+  /* background-color: #b9657b; */
+}
+
+/* section > div {
    transform: scale(0.6);
    opacity: 0;
    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
@@ -108,39 +120,107 @@ warna pink pastel #f6c2ce
  section:hover > div, section.active > div {
    transform: scale(1);
    opacity: 1;
- }
+ } */
 
- section .konten1 {
-   background-color: var(--cream-t);
-   width: 70rem;
-   height: 20rem;
-   border-radius: 5rem;
-   text-align: center;
-   display: flex;
-   align-items: center;
-   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.568);
- }
- 
- section .konten1 > h2 {
-   font-size: 1.9rem;
-   padding: 5rem;
-   color: var(--bp);
-   -webkit-text-stroke: 0.1px var(--pt);
+section .konten1 {
+  background-color: var(--cream-t);
+  /* width: 85%;
+  height: 50%; */
+  border-radius: 5rem;
+  text-align: center;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.568);
+  margin: 0 5rem;
+}
+
+section .konten1 > h2 {
+  font-size: 1.9rem;
+  padding: 5rem;
+  color: var(--bp);
+  -webkit-text-stroke: 0.1px rgb(54, 74, 116);
+  letter-spacing: 0.7px;
+  word-spacing: 1px;
+  line-height: 1.5;
 }
 
 section .surprise-button > button {
-   font-family: "Chewy", sans-serif;
-   font-size: 1.2rem;
-   margin-top: 6rem;
-   background-color: var(--pt);
-   padding: 1rem;
-   border-radius: 2rem;
-   color: var(--cream);
-   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.568);
-   cursor: pointer;
+  font-family: "Chewy", sans-serif;
+  font-size: 1.2rem;
+  margin-top: 6rem;
+  background-color: var(--pt);
+  padding: 1rem;
+  border-radius: 2rem;
+  color: var(--cream);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.568);
+  cursor: pointer;
 }
 
 section .surprise-button > button:hover {
-   background-color: var(--bp);
-   color: var(--pt);
+  background-color: var(--bp);
+  color: var(--pt);
+}
+
+/* media queris */
+@media (min-width: 1366px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 83.5%;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 63.5%;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  header .title .t-h1 {
+    font-size: 6rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    flex-wrap: wrap;
+  }
+
+  header .title .t-h1 {
+    font-size: 6rem;
+    text-align: center;
+  }
+
+  header .photo {
+    padding: 0 0 0 0;
+  }
+
+  header .photo img {
+    width: 30rem;
+  }
+
+  header .title {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 7rem;
+  }
+}
+
+@media (max-width: 375px) {
+   html {
+      font-size: 45%;
+   }
 }
