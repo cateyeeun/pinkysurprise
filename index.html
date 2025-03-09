@@ -14,16 +14,20 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <header>
+  <body class="body-i">
+    <video class="video-bg" autoplay muted loop>
+      <source src="./file-index/index/index-bg.mp4" type="video/mp4" />
+      Browser Anda tidak mendukung tag video.
+    </video>
+    <header class="header-i">
       <div class="photo">
-        <img src="./file-index/polaroid1.png" alt="polaroid1" />
+        <img src="./file-index/index/polaroid1.png" alt="polaroid1" />
       </div>
       <div class="title">
         <h1 class="t-h1"></h1>
       </div>
     </header>
-    <section>
+    <section class="section-i">
       <div class="konten1">
         <h2>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni,
@@ -40,7 +44,7 @@
     </section>
     <script>
       document
-        .querySelector("header")
+        .querySelector(".header-i")
         .addEventListener("mouseenter", function () {
           let container = document.querySelector(".t-h1");
           container.innerHTML = ""; // Menghapus teks yang ada

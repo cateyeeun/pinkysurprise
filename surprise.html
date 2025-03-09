@@ -1,13 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="display: flex; align-items: center; justify-content: center;">
-    <h1>
-        BY CEWENYA IBALL <3
-    </h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>surprise-1</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body-s1">
+    <video class="video-bg" autoplay muted loop>
+      <source src="./file-index/surprise/surprise-bg.mp4" type="video/mp4" />
+      Browser Anda tidak mendukung tag video.
+    </video>
+    <div class="title-s1">
+      <h1>Our <span>Memories</span></h1>
+    </div>
+    <section class="slideshow-container">
+      <div class="slides">
+        <div class="slide">
+          <img
+            src="./file-index/surprise/1.jpg"
+            alt="Kenangan 1"
+          />          
+        </div>
+        <div class="slide">
+          <img
+            src="./file-index/surprise/2.jpg"
+            alt="Kenangan 2"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="./file-index/surprise/3.jpg"
+            alt="Kenangan 3"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="./file-index/surprise/2.jpg"
+            alt="Kenangan 4"
+          />
+        </div>
+      </div>
+
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+
+    <div class="dots"></div>
+
+    <script>
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+      const dotsContainer = document.querySelector(".dots");
+
+      slides.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        dot.setAttribute("onclick", `currentSlide(${index})`);
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll(".dot");
+
+      function showSlide(n) {
+        if (n >= slides.length) slideIndex = 0;
+        if (n < 0) slideIndex = slides.length - 1;
+
+        document.querySelector(".slides").style.transform = `translateX(-${
+          slideIndex * 100
+        }%)`;
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[slideIndex].classList.add("active");
+      }
+
+      function changeSlide(n) {
+        slideIndex += n;
+        showSlide(slideIndex);
+      }
+
+      function currentSlide(n) {
+        slideIndex = n;
+        showSlide(slideIndex);
+      }
+
+      function autoSlide() {
+        changeSlide(1);
+        setTimeout(autoSlide, 3000);
+      }
+
+      showSlide(slideIndex);
+      setTimeout(autoSlide, 3000);
+    </script>
+  </body>
 </html>

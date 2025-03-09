@@ -15,14 +15,22 @@
   text-decoration: none;
 }
 
-body {
+html {
   font-family: "Chewy", sans-serif;
-  background: url("./file-index/index-background.gif") no-repeat center fixed;
-  background-size: cover;
-  backdrop-filter: blur(2px);
 }
 
-header {
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* index.html */
+.header-i {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,14 +39,14 @@ header {
   /* background-color: #b3f0fb; */
 }
 
-header .photo {
+.header-i .photo {
   /* background-color: #b9657b; */
   width: 40%;
   height: 100%;
   text-align: right;
 }
 
-header .photo img {
+.header-i .photo img {
   width: 25rem;
   animation: floatingRotate 3s infinite linear;
 }
@@ -58,7 +66,7 @@ header .photo img {
   }
 }
 
-header .title {
+.header-i .title {
   /* background-color: blueviolet; */
   width: 60%;
   height: 100%;
@@ -66,7 +74,7 @@ header .title {
   padding-left: 4%;
 }
 
-header .title .t-h1 {
+.header-i .title .t-h1 {
   font-size: 6.8rem;
   color: var(--cream);
   -webkit-text-stroke: 0.3rem var(--pt);
@@ -74,7 +82,7 @@ header .title .t-h1 {
   font-weight: 400;
 }
 
-header .title .t-h1 span {
+.header-i .title .t-h1 span {
   display: inline-block;
   margin: 0 4px;
   opacity: 0;
@@ -93,7 +101,7 @@ header .title .t-h1 span {
   }
 }
 
-header > div {
+.header-i > div {
   transform: scale(0);
   opacity: 0;
   animation: grow 0.5s ease-out forwards;
@@ -110,7 +118,7 @@ header > div {
   }
 }
 
-section {
+.section-i {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,18 +128,19 @@ section {
   /* background-color: #b9657b; */
 }
 
-section > div {
-   transform: scale(0.5);
-   opacity: 0;
-   transition: transform 0.2s ease-in-out, opacity 0.1s ease-in-out;
- }
+.section-i > div {
+  transform: scale(0.5);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.1s ease-in-out;
+}
 
- section:hover > div, section.active > div {
-   transform: scale(1);
-   opacity: 1;
- }
+.section-i:hover > div,
+.section-i.active > div {
+  transform: scale(1);
+  opacity: 1;
+}
 
-section .konten1 {
+.section-i .konten1 {
   background-color: var(--cream-t);
   border-radius: 5rem;
   text-align: center;
@@ -139,7 +148,7 @@ section .konten1 {
   margin: 0 5rem;
 }
 
-section .konten1 > h2 {
+.section-i .konten1 > h2 {
   font-size: 2.3rem;
   padding: 5rem;
   color: var(--pt);
@@ -150,7 +159,7 @@ section .konten1 > h2 {
   text-shadow: 1px 1px 4px var(--bp);
 }
 
-section .surprise-button > button {
+.section-i .surprise-button > button {
   font-family: "Chewy", sans-serif;
   font-size: 1.2rem;
   margin-top: 6rem;
@@ -174,7 +183,7 @@ section .surprise-button > button {
   }
 }
 
-section .surprise-button > button:hover {
+.section-i .surprise-button > button:hover {
   background-color: var(--pt);
   color: var(--cream);
   animation: none;
@@ -205,15 +214,15 @@ section .surprise-button > button:hover {
     font-size: 60%;
   }
 
-  header .title .t-h1 {
+  .header-i .title .t-h1 {
     font-size: 6rem;
   }
 
-  header .photo {
+  .header-i .photo {
     width: 50%;
   }
 
-  header .title {
+  .header-i .title {
     width: 50%;
   }
 }
@@ -224,21 +233,21 @@ section .surprise-button > button:hover {
     font-size: 55%;
   }
 
-  header {
+  .header-i {
     flex-direction: column;
   }
 
-  header .photo {
+  .header-i .photo {
     width: 100%;
     height: 50%;
     text-align: center;
   }
 
-  header .photo img {
+  .header-i .photo img {
     width: 40rem;
   }
 
-  header .title {
+  .header-i .title {
     width: 90%;
     height: 50%;
     text-align: center;
@@ -246,10 +255,10 @@ section .surprise-button > button:hover {
     margin-top: 5rem;
   }
 
-  header .title .t-h1 {
+  .header-i .title .t-h1 {
     font-size: 5rem;
     text-shadow: 2px 2px 10px var(--pt);
-  }  
+  }
 }
 
 @media (max-width: 500px) {
@@ -259,13 +268,119 @@ section .surprise-button > button:hover {
 }
 
 @media (max-width: 375px) {
-   html {
-      font-size: 42%;
-   }
+  html {
+    font-size: 42%;
+  }
 }
 
 @media (max-width: 320px) {
   html {
     font-size: 40%;
   }
+}
+
+/* surprise.html */
+.body-s1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vh;
+}
+
+.title-s1 {
+  padding: 2rem;
+}
+
+.title-s1 h1 {
+  /* background-color: cadetblue; */
+  font-size: 4rem;
+  color: var(--pp);
+  -webkit-text-stroke: 0.1rem var(--pt);
+  text-shadow: 2px 2px 16px var(--pt);
+}
+
+.title-s1 h1 span {
+  -webkit-text-stroke: 0.1rem rgb(71, 142, 184);
+  color: var(--bp);
+}
+
+.slideshow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 20%;
+  height: 10%;
+  /* max-width: 600px; */
+  border-radius: 10px;
+  /* overflow: hidden; */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slideshow-container .slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  /* margin: 5rem 2rem; */
+}
+
+.slideshow-container .slides .slide {
+  display: flex;
+  /* background-color: var(--cream); */
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+  padding: 2rem 2rem;
+}
+
+.slideshow-container .slides .slide img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  /* background-color: #b9657b; */
+}
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.slideshow-container .prev,
+.slideshow-container .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.slideshow-container .prev {
+  left: 10px;
+}
+
+.slideshow-container .next {
+  right: 10px;
+}
+
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
