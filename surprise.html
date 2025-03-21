@@ -25,28 +25,49 @@
     <section class="slideshow-container">
       <div class="slides">
         <div class="slide">
-          <img
-            src="./file-index/surprise/1.jpg"
-            alt="Kenangan 1"
-          />          
+          <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
         </div>
         <div class="slide">
-          <img
-            src="./file-index/surprise/2.jpg"
-            alt="Kenangan 2"
-          />
+          <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
         </div>
         <div class="slide">
-          <img
-            src="./file-index/surprise/3.jpg"
-            alt="Kenangan 3"
-          />
+          <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
         </div>
         <div class="slide">
-          <img
-            src="./file-index/surprise/2.jpg"
-            alt="Kenangan 4"
-          />
+          <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
+        </div>
+        <div class="slide">
+          <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
         </div>
       </div>
 
@@ -57,28 +78,36 @@
     <div class="dots"></div>
 
     <script>
-      let slideIndex = 0;
+      let slideIndex = 2; // Mulai dari slide ke-6
       const slides = document.querySelectorAll(".slide");
       const dotsContainer = document.querySelector(".dots");
 
-      slides.forEach((_, index) => {
+      // Buat navigasi dots hanya untuk slide ke-6 hingga ke-10
+      for (let i = 2; i <= 12; i++) {
         const dot = document.createElement("span");
         dot.classList.add("dot");
-        dot.setAttribute("onclick", `currentSlide(${index})`);
+        dot.setAttribute("onclick", `currentSlide(${i})`);
         dotsContainer.appendChild(dot);
-      });
+      }
 
       const dots = document.querySelectorAll(".dot");
 
       function showSlide(n) {
-        if (n >= slides.length) slideIndex = 0;
-        if (n < 0) slideIndex = slides.length - 1;
+        if (n > 12) slideIndex = 2; // Jika sudah sampai slide ke-10, kembali ke slide ke-6
+        if (n < 2) slideIndex = 12; // Jika mundur sebelum slide ke-6, kembali ke slide ke-10
 
         document.querySelector(".slides").style.transform = `translateX(-${
           slideIndex * 100
         }%)`;
+
+        // Hapus efek aktif dari semua slide
+        slides.forEach((slide) => slide.classList.remove("active"));
+
+        // Tambahkan efek ke slide yang sedang aktif
+        slides[slideIndex].classList.add("active");
+
         dots.forEach((dot) => dot.classList.remove("active"));
-        dots[slideIndex].classList.add("active");
+        dots[slideIndex - 2].classList.add("active"); // Index dots mulai dari 0 (slide ke-6 menjadi index 0)
       }
 
       function changeSlide(n) {
@@ -96,6 +125,7 @@
         setTimeout(autoSlide, 3000);
       }
 
+      // Jalankan slideshow dari slide ke-6
       showSlide(slideIndex);
       setTimeout(autoSlide, 3000);
     </script>
