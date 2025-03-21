@@ -344,6 +344,7 @@ html {
   transform: scale(1.2);
   transition: 0.5s ease-in-out;
   opacity: 1;
+  background-color: none;
 }
 
 .dots {
