@@ -281,16 +281,20 @@ html {
 
 /* surprise.html */
 .body-s1 {
+  overflow: hidden;
+}
+
+.memories {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
-  min-width: 100vh;
-  overflow: hidden;
+  width: 100vw;
 }
 
 .title-s1 {
   padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .title-s1 h1 {
@@ -304,6 +308,13 @@ html {
 .title-s1 h1 span {
   -webkit-text-stroke: 0.1rem rgb(71, 142, 184);
   color: var(--bp);
+}
+
+.slider {
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slideshow-container {
@@ -321,7 +332,6 @@ html {
 .slideshow-container .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  /* margin: 5rem 2rem; */
   width: 100%;
 }
 
