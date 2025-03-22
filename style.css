@@ -15,8 +15,10 @@
   text-decoration: none;
 }
 
-html {
+html,
+body {
   font-family: "Chewy", sans-serif;
+  overflow-x: hidden;
 }
 
 .video-bg {
@@ -225,6 +227,24 @@ html {
   .header-i .title {
     width: 50%;
   }
+
+  .dot {
+    height: 8px !important;
+    width: 8px !important;
+  }
+
+  .slideshow-container .prev,
+  .slideshow-container .next {
+    padding: 8px 12px !important;
+  }
+
+  .slideshow-container .prev {
+    left: 8px !important;
+  }
+  
+  .slideshow-container .next {
+    right: 8px !important;
+  }
 }
 
 /* mobile */
@@ -259,11 +279,47 @@ html {
     font-size: 5rem;
     text-shadow: 2px 2px 10px var(--pt);
   }
+
+  .dot {
+    height: 6px !important;
+    width: 6px !important;
+  }
+
+  .slideshow-container .prev,
+  .slideshow-container .next {
+    padding: 6px 9px !important;
+  }
+
+  .slideshow-container .prev {
+    left: 6px !important;
+  }
+  
+  .slideshow-container .next {
+    right: 6px !important;
+  }
 }
 
 @media (max-width: 500px) {
   html {
     font-size: 49%;
+  }
+
+  .dot {
+    height: 4px !important;
+    width: 4px !important;
+  }
+
+  .slideshow-container .prev,
+  .slideshow-container .next {
+    padding: 4px 6px !important;
+  }
+
+  .slideshow-container .prev {
+    left: 4px !important;
+  }
+  
+  .slideshow-container .next {
+    right: 4px !important;
   }
 }
 
@@ -285,10 +341,14 @@ html {
 }
 
 .memories {
+  display: block;
+  width: 100vw;
+}
+
+.memories-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100vw;
 }
 
 .title-s1 {
@@ -370,6 +430,7 @@ html {
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 .dot.active {
@@ -387,6 +448,7 @@ html {
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 5px;
+  font-family: "Chewy", sans-serif;
 }
 
 .slideshow-container .prev {

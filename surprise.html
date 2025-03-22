@@ -20,73 +20,75 @@
       Browser Anda tidak mendukung tag video.
     </video>
     <section class="memories">
-      <div class="title-s1">
-        <h1>Our <span>Memories</span></h1>
-      </div>
-      <section class="slider">
-        <div class="slideshow-container">
-          <div class="slides">
-          <div class="slide">
-            <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
-          </div>
-          <div class="slide">
-            <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
-          </div>
+      <div class="memories-container">
+        <div class="title-s1">
+          <h1>Our <span>Memories</span></h1>
         </div>
-        
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-      </div>
-    </section>
+        <section class="slider">
+          <div class="slideshow-container">
+            <div class="slides">
+              <div class="slide">
+                <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+              </div>
+            </div>
 
-      <div class="dots"></div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+          </div>
+        </section>
+
+        <div class="dots"></div>
+      </div>
     </section>
 
     <script>
-      let slideIndex = 2; // Mulai dari slide ke-6
+      let slideIndex = 2; // Mulai dari slide ke-3
       const slides = document.querySelectorAll(".slide");
       const dotsContainer = document.querySelector(".dots");
 
-      // Buat navigasi dots hanya untuk slide ke-6 hingga ke-10
+      // Buat navigasi dots hanya untuk slide ke-3 hingga ke-13
       for (let i = 2; i <= 12; i++) {
         const dot = document.createElement("span");
         dot.classList.add("dot");
@@ -97,8 +99,8 @@
       const dots = document.querySelectorAll(".dot");
 
       function showSlide(n) {
-        if (n > 12) slideIndex = 2; // Jika sudah sampai slide ke-10, kembali ke slide ke-6
-        if (n < 2) slideIndex = 12; // Jika mundur sebelum slide ke-6, kembali ke slide ke-10
+        if (n > 12) slideIndex = 2; // Jika sudah sampai slide ke-13, kembali ke slide ke-3
+        if (n < 2) slideIndex = 12; // Jika mundur sebelum slide ke-3, kembali ke slide ke-13
 
         document.querySelector(".slides").style.transform = `translateX(-${
           slideIndex * 100
@@ -111,7 +113,7 @@
         slides[slideIndex].classList.add("active");
 
         dots.forEach((dot) => dot.classList.remove("active"));
-        dots[slideIndex - 2].classList.add("active"); // Index dots mulai dari 0 (slide ke-6 menjadi index 0)
+        dots[slideIndex - 2].classList.add("active"); // Index dots mulai dari 3 (slide ke-3 menjadi index 0)
       }
 
       function changeSlide(n) {
@@ -129,7 +131,7 @@
         setTimeout(autoSlide, 3000);
       }
 
-      // Jalankan slideshow dari slide ke-6
+      // Jalankan slideshow dari slide ke-3
       showSlide(slideIndex);
       setTimeout(autoSlide, 3000);
     </script>
