@@ -13,12 +13,18 @@
       href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
       rel="stylesheet"
     />
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body class="body-s1">
+    <!-- background -->
     <video class="video-bg" autoplay muted loop>
       <source src="./file-index/surprise/surprise-bg.mp4" type="video/mp4" />
       Browser Anda tidak mendukung tag video.
     </video>
+
+    <!-- slideshow -->
     <section class="memories">
       <div class="memories-container">
         <div class="title-s1">
@@ -74,8 +80,12 @@
               </div>
             </div>
 
-            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            <button class="prev" onclick="changeSlide(-1)">
+              <i data-feather="chevron-left"></i>
+            </button>
+            <button class="next" onclick="changeSlide(1)">
+              <i data-feather="chevron-right"></i>
+            </button>
           </div>
         </section>
 
@@ -83,7 +93,60 @@
       </div>
     </section>
 
+    <!-- lirik lagu -->
+    <section class="lyrics">
+      <!-- music player -->
+      <audio id="bg-music" autoplay loop>
+        <source
+          src="/file-index/surprise/perfect-edsheeran.mp3"
+          type="audio/mp3"
+        />
+        Browser Anda tidak mendukung tag audio.
+      </audio>
+
+      <div class="album-container">
+        <div class="song-image">
+          <div class="img-song">
+            <img src="/file-index/surprise/perfect.png" alt="image-perfect" />
+          </div>
+          <div class="name-song">
+            <h3>PERFECT</h3>
+            <p>Ed Sheeran</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lyrics-container">
+        <div class="line">
+          <div class="line-p">
+            <p id="prev-lyric"></p>
+            <p id="current-lyric" class="active"></p>
+            <p id="next-lyric"></p>
+          </div>
+        </div>
+        <div class="bg-music-controls">
+          <div class="btn-controls">
+            <button id="prevBtn">
+              <i data-feather="rewind"></i>
+            </button>
+            <button id="playPauseBtn">
+              <i data-feather="pause"></i>
+            </button>
+            <button id="nextBtn">
+              <i data-feather="fast-forward"></i>
+            </button>
+          </div>
+          <div class="range-music">
+            <p id="currentTime">00:00</p>
+            <input type="range" id="seekBar" value="0" step="1" />
+            <p id="totalDuration">04:06</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script>
+      // SLIDESHOW
       let slideIndex = 2; // Mulai dari slide ke-3
       const slides = document.querySelectorAll(".slide");
       const dotsContainer = document.querySelector(".dots");
@@ -128,12 +191,223 @@
 
       function autoSlide() {
         changeSlide(1);
-        setTimeout(autoSlide, 3000);
+        setTimeout(autoSlide, 4000);
       }
 
       // Jalankan slideshow dari slide ke-3
       showSlide(slideIndex);
-      setTimeout(autoSlide, 3000);
+      setTimeout(autoSlide, 4000);
+
+      // LYRICS
+      let lyrics = [
+        { time: 0, text: ".  .  ." },
+        { time: 3, text: "I found a love for me" },
+        {
+          time: 10,
+          text: "Oh, darling, just dive right in and follow my lead",
+        },
+        { time: 17, text: "Well, I found a girl, beautiful and sweet" },
+        {
+          time: 25,
+          text: "Oh, I never knew you were the someone waitin' for me",
+        },
+        {
+          time: 32,
+          text: "'Cause we were just kids when we fell in love, not knowin' what it was",
+        },
+        { time: 40, text: "I will not give you up this time" },
+        {
+          time: 48,
+          text: "Oh, darling, just kiss me slow, your heart is all I own",
+        },
+        { time: 55, text: "And in your eyes, you're holding mine" },
+        {
+          time: 61,
+          text: "Baby, I'm dancin' in the dark with you between my arms",
+        },
+        {
+          time: 73,
+          text: "Barefoot on the grass while listenin' to our favourite song",
+        },
+        {
+          time: 80,
+          text: "When you said you looked a mess, I whispered underneath my breath",
+        },
+        {
+          time: 87,
+          text: "But you heard it, Darling, you look perfect tonight",
+        },
+        {
+          time: 100,
+          text: "Well, I found a woman, stronger than anyone I know",
+        },
+        {
+          time: 108,
+          text: "She shares my dreams, I hope that someday, I'll share her home",
+        },
+        {
+          time: 116,
+          text: "I found a love to carry more than just my secrets",
+        },
+        { time: 123, text: "To carry love, to carry children of our own" },
+        {
+          time: 129,
+          text: "We are still kids, but we're so in love, fightin' against all odds",
+        },
+        { time: 139, text: "I know we'll be alright this time" },
+        {
+          time: 146,
+          text: "Darling, just hold my hand, be my girl, I'll be your man",
+        },
+        { time: 154, text: "I see my future in your eyes" },
+        {
+          time: 160,
+          text: "Oh, baby, I'm dancin' in the dark with you between my arms",
+        },
+        {
+          time: 172,
+          text: "Barefoot on the grass while listenin' to our favourite song",
+        },
+        {
+          time: 179,
+          text: "When I saw you in that dress, lookin' so beautiful",
+        },
+        {
+          time: 185,
+          text: "I don't deserve this, darling, you look perfect tonight",
+        },
+        { time: 198, text: "No, no, no" },
+        { time: 203, text: "Mm, oh" },
+        {
+          time: 206,
+          text: "Baby, I'm dancin' in the dark with you between my arms",
+        },
+        {
+          time: 217,
+          text: "Barefoot on the grass, oh, listenin' to our favourite song",
+        },
+        {
+          time: 224,
+          text: "I have faith in what I see, now I know I have met",
+        },
+        { time: 230, text: "An angel in person, and she looks perfect" },
+        { time: 238, text: "I don't deserve this, you look perfect tonight" },
+        { time: 246, text: ".  .  ." },
+      ];
+
+      let music = document.getElementById("bg-music");
+      let prevLyric = document.getElementById("prev-lyric");
+      let currentLyric = document.getElementById("current-lyric");
+      let nextLyric = document.getElementById("next-lyric");
+
+      function updateLyrics(currentTime) {
+        let index = lyrics.findIndex((lyric) => lyric.time === currentTime);
+        if (index !== -1) {
+          prevLyric.innerText = lyrics[index - 1] ? lyrics[index - 1].text : "";
+          currentLyric.innerText = lyrics[index].text;
+          nextLyric.innerText = lyrics[index + 1] ? lyrics[index + 1].text : "";
+        }
+      }
+
+      music.addEventListener("timeupdate", () => {
+        updateLyrics(Math.floor(music.currentTime));
+      });
+
+      // music controls
+      document.addEventListener("DOMContentLoaded", function () {
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const volumeSlider = document.getElementById("volumeSlider");
+
+        // Atur agar musik tidak mute di awal
+        // music.muted = false;
+
+        // Tombol Play/Pause
+        playPauseBtn.addEventListener("click", function () {
+          if (music.paused) {
+            music.play();
+            playPauseBtn.innerHTML = `<i data-feather="pause"></i>`;
+          } else {
+            music.pause();
+            playPauseBtn.innerHTML = `<i data-feather="play"></i>`;
+          }
+          feather.replace(); // Update ikon
+        });
+
+        // Tombol Rewind (Kembali ke awal lagu)
+        prevBtn.addEventListener("click", function () {
+          music.currentTime -= 10; // Set waktu ke awal lagu
+        });
+
+        // Tombol Fast Forward (Maju 10 detik)
+        nextBtn.addEventListener("click", function () {
+          music.currentTime += 10;
+        });
+
+        // range music
+        const seekBar = document.getElementById("seekBar");
+
+        // Saat metadata audio dimuat, set nilai maksimum slider
+        music.addEventListener("loadedmetadata", () => {
+          seekBar.max = music.duration;
+        });
+
+        // Update slider saat lagu diputar
+        music.addEventListener("timeupdate", () => {
+          seekBar.value = music.currentTime;
+        });
+
+        // Ubah posisi lagu saat slider digeser
+        seekBar.addEventListener("input", () => {
+          music.currentTime = seekBar.value;
+        });
+
+        // duration
+        const currentTimeDisplay = document.getElementById("currentTime");
+        const totalDurationDisplay = document.getElementById("totalDuration");
+
+        // Konversi detik ke format MM:SS
+        function formatTime(seconds) {
+          const minutes = Math.floor(seconds / 60);
+          const secs = Math.floor(seconds % 60);
+          return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+        }
+
+        // Saat metadata dimuat, set total durasi
+        music.addEventListener("loadedmetadata", () => {
+          totalDurationDisplay.textContent = formatTime(music.duration);
+        });
+
+        // Update waktu saat ini selama lagu diputar
+        music.addEventListener("timeupdate", () => {
+          currentTimeDisplay.textContent = formatTime(music.currentTime);
+        });
+
+        // Update warna progress saat digeser
+        seekBar.addEventListener("input", () => {
+          updateProgressBar();
+        });
+
+        // Efek hover: Ganti warna menjadi biru
+        seekBar.addEventListener("mouseenter", () => {
+          let val = (seekBar.value / seekBar.max) * 100;
+          seekBar.style.background = `linear-gradient(to right, #478eb8 ${val}%, gray ${val}%)`;
+        });
+
+        // Kembalikan warna setelah hover
+        seekBar.addEventListener("mouseleave", () => {
+          updateProgressBar();
+        });
+
+        // Fungsi untuk memperbarui warna progress
+        function updateProgressBar() {
+          let val = (seekBar.value / seekBar.max) * 100;
+          seekBar.style.background = `linear-gradient(to right, white ${val}%, gray ${val}%)`;
+        }
+        // Perbarui Feather Icons setelah perubahan
+        feather.replace();
+      });
     </script>
   </body>
 </html>
