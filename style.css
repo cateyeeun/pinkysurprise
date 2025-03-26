@@ -632,16 +632,6 @@ body {
   opacity: 1;
 }
 
-/* #playPauseBtn {
-  width: 2rem;
-}
-
-#playPauseBtn:hover {
-  width: 3rem;
-  scale: (1.2);
-  transition: 0.5s;
-  } */
-
 .bg-music-controls .range-music {
   display: flex;
   align-items: center;
