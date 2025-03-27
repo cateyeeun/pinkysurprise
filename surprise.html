@@ -18,6 +18,14 @@
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body class="body-s1">
+    <!-- pop up play music -->
+    <div id="music-popup">
+      <div class="popup">
+        <p>Turn on the music!</p>
+        <button id="playMusic">Play</button>
+      </div>
+    </div>
+
     <!-- background -->
     <video class="video-bg" autoplay muted loop>
       <source src="./file-index/surprise/surprise-bg.mp4" type="video/mp4" />
@@ -96,9 +104,9 @@
     <!-- lirik lagu -->
     <section class="lyrics">
       <!-- music player -->
-      <audio id="bg-music" autoplay loop>
+      <audio id="bg-music" loop>
         <source
-          src="/file-index/surprise/perfect-edsheeran.mp3"
+          src="./file-index/surprise/perfect-edsheeran.mp3"
           type="audio/mp3"
         />
         Browser Anda tidak mendukung tag audio.
@@ -107,7 +115,7 @@
       <div class="album-container">
         <div class="song-image">
           <div class="img-song">
-            <img src="/file-index/surprise/perfect.png" alt="image-perfect" />
+            <img src="./file-index/surprise/perfect.png" alt="image-perfect" />
           </div>
           <div class="name-song">
             <h3>PERFECT</h3>
@@ -313,12 +321,11 @@
         updateLyrics(Math.floor(music.currentTime));
       });
 
-      // music controls
+      // music controls/button
       document.addEventListener("DOMContentLoaded", function () {
         const playPauseBtn = document.getElementById("playPauseBtn");
         const prevBtn = document.getElementById("prevBtn");
         const nextBtn = document.getElementById("nextBtn");
-        const volumeSlider = document.getElementById("volumeSlider");
 
         // Atur agar musik tidak mute di awal
         // music.muted = false;
@@ -405,9 +412,19 @@
           let val = (seekBar.value / seekBar.max) * 100;
           seekBar.style.background = `linear-gradient(to right, white ${val}%, gray ${val}%)`;
         }
-        // Perbarui Feather Icons setelah perubahan
-        feather.replace();
       });
+
+      document
+        .getElementById("playMusic")
+        .addEventListener("click", function () {
+          music.play().catch((error) => console.log("Autoplay gagal:", error));
+
+          // Sembunyikan pop-up setelah tombol diklik
+          document.getElementById("music-popup").style.display = "none";
+        });
+
+      // Perbarui Feather Icons setelah perubahan
+      feather.replace();
     </script>
   </body>
 </html>
