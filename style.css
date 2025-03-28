@@ -2,9 +2,11 @@
   --cream: #fff9f0;
   --cream-t: #fff9f0c0;
   --pt: #b9657b;
+  --pt1: #a84a5a;
   --pp: #f6c2ce;
   --bp: #b3e4fb;
   --bt: #43869b;
+  --ct: #382020;
 }
 
 * {
@@ -252,6 +254,14 @@ body {
   .lyrics-container .line .line-p p {
     font-size: 1.5rem !important;
   }
+
+  .surat-container .pesan .amplop.open {
+    top: 0;
+  }
+
+  .surat-container .pesan .love-text {
+    font-size: 1.4rem !important;
+  }
 }
 
 /* mobile */
@@ -295,6 +305,10 @@ body {
   .slideshow-container .prev,
   .slideshow-container .next {
     padding: 2px 2px !important;
+  }
+
+  .surat-container .pesan .love-text {
+    font-size: 1.3rem !important;
   }
 }
 
@@ -344,17 +358,29 @@ body {
   .lyrics .album-container .song-image .name-song h3 {
     margin-top: 0 !important;
   }
+
+  .surat-container .pesan .love-text {
+    font-size: 1.2rem !important;
+  }
 }
 
 @media (max-width: 375px) {
   html {
     font-size: 42%;
   }
+
+  .surat-container .pesan .love-text {
+    font-size: 1.1rem !important;
+  }
 }
 
 @media (max-width: 320px) {
   html {
     font-size: 40%;
+  }
+
+  .surat-container .pesan .love-text {
+    font-size: 1rem !important;
   }
 }
 
@@ -364,6 +390,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .memories {
@@ -505,7 +532,7 @@ body {
   align-items: center;
   background-color: rgba(7, 7, 7, 0.205);
   padding: 5rem;
-  margin: 3rem;
+  margin: 5rem 3rem;
   border-radius: 2rem;
   backdrop-filter: blur(10px);
 }
@@ -657,7 +684,7 @@ body {
   font-size: 1.5rem;
   padding: 2rem;
   color: var(--pt);
-  text-shadow: 1px 1px 1px rgb(56, 32, 32);
+  text-shadow: 1px 1px 1px var(--ct);
   letter-spacing: 1px;
 }
 
@@ -699,10 +726,6 @@ body {
   cursor: pointer;
 }
 
-.bg-music-controls .range-music input[type="range"]:hover {
-  background: var(--bp);
-}
-
 .bg-music-controls .range-music input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   /* width: 10px;
@@ -718,6 +741,72 @@ body {
   input[type="range"]::-webkit-slider-thumb:hover {
   width: 10px;
   height: 10px;
+}
+
+.surat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  margin: 5rem 3rem;
+  /* background-color: var(--cream-t); */
+  border-radius: 1rem;
+}
+
+.surat-container .pesan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem;
+  /* background-color: var(--cream); */
+  border-radius: 1rem;
+  width: 70%;
+  position: relative;
+  background: none;
+  transition: background 0.1s ease-in-out;
+}
+
+.surat-container .pesan.show-bg {
+  border: dashed 2px var(--pt);
+  background: var(--cream);
+}
+
+.surat-container .pesan .amplop {
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14rem;
+  transition: top 0.5s ease, transform 0.5s ease;
+  transition: 0.3s ease;
+  /* animation: pulseAnim 1s infinite alternate ease-in-out; */
+}
+
+.surat-container .pesan .amplop.open {
+  top: -5%;
+  transform: translate(-50%, -50%) scale(1.1);
+  /* animation: none; */
+}
+
+.surat-container .pesan .amplop:hover {
+  width: 17rem;
+  transition: 0.5s ease;
+}
+
+.surat-container .pesan .love-text {
+  font-size: 1.5rem;
+  color: var(--pt1);
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+  text-align: justify;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow: hidden;
+  width: 100%;
 }
 
 /* letter-spacing: 0.7px;

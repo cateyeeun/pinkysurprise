@@ -146,10 +146,22 @@
           </div>
           <div class="range-music">
             <p id="currentTime">00:00</p>
-            <input type="range" id="seekBar" value="0" step="1" />
+            <input type="range" id="seekBar" min="0" value="0" step="1" />
             <p id="totalDuration">04:06</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="surat-container">
+      <div class="pesan">
+        <img
+          src="./file-index/surprise/amplop.png"
+          alt="amplop-image"
+          class="amplop"
+          id="amplop"
+        />
+        <p class="love-text" id="love-text"></p>
       </div>
     </section>
 
@@ -370,6 +382,11 @@
           music.currentTime = seekBar.value;
         });
 
+        // Perbarui posisi lagu saat pengguna mengklik slider
+        seekBar.addEventListener("change", () => {
+          music.currentTime = seekBar.value;
+        });
+
         // duration
         const currentTimeDisplay = document.getElementById("currentTime");
         const totalDurationDisplay = document.getElementById("totalDuration");
@@ -396,22 +413,10 @@
           updateProgressBar();
         });
 
-        // Efek hover: Ganti warna menjadi biru
-        seekBar.addEventListener("mouseenter", () => {
-          let val = (seekBar.value / seekBar.max) * 100;
-          seekBar.style.background = `linear-gradient(to right, #478eb8 ${val}%, gray ${val}%)`;
-        });
-
-        // Kembalikan warna setelah hover
-        seekBar.addEventListener("mouseleave", () => {
-          updateProgressBar();
-        });
-
-        // Fungsi untuk memperbarui warna progress
-        function updateProgressBar() {
-          let val = (seekBar.value / seekBar.max) * 100;
+        seekBar.addEventListener("input", () => {
+          let val = (seekBar.value / seekBar.max) * 100; // Menghitung progress
           seekBar.style.background = `linear-gradient(to right, white ${val}%, gray ${val}%)`;
-        }
+        });
       });
 
       document
@@ -422,6 +427,57 @@
           // Sembunyikan pop-up setelah tombol diklik
           document.getElementById("music-popup").style.display = "none";
         });
+
+      // surat
+      const envelope = document.getElementById("amplop");
+      const textElement = document.getElementById("love-text");
+      const massage = document.querySelector(".pesan");
+      let isOpen = false; // Menyimpan status apakah surat sudah terbuka
+
+      const loveText = `"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolore distinctio corrupti obcaecati! Ipsam, atque consectetur doloremque fugit dolor in corrupti necessitatibus deleniti temporibus voluptate repudiandae nostrum cum nulla repellat, odio nobis illum explicabo veniam saepe quibusdam maiores sed! Itaque placeat illo fugiat dolores nostrum tenetur veritatis sequi corrupti! Culpa tempore ad ut ea. Doloribus eos inventore asperiores quod magni quae odit laboriosam repellendus, natus sunt voluptas. Quidem voluptatem eius maxime eaque aliquid ullam, ratione earum pariatur minima et perspiciatis modi sit placeat sunt sint ipsam quod. Cum laborum earum, optio, necessitatibus minima iste incidunt possimus eligendi, doloribus officia ducimus."`;
+
+      function typeWriter(text, element, speed = 15) {
+        let index = 0;
+        element.innerHTML = ""; // Kosongkan sebelum mengetik ulang
+
+        function typing() {
+          if (index < text.length) {
+            element.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typing, speed);
+          } else {
+            element.style.borderRight = "none"; // Hapus efek kursor setelah selesai
+          }
+        }
+
+        typing();
+      }
+
+      envelope.addEventListener("click", function () {
+        if (!isOpen) {
+          // Klik pertama: Buka surat
+          envelope.classList.add("open");
+          massage.classList.add("show-bg");
+          textElement.style.display = "block"; // Munculkan teks
+
+          setTimeout(() => {
+            typeWriter(loveText, textElement);
+
+            // Scroll otomatis ke container setelah teks mulai muncul
+            setTimeout(() => {
+              massage.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, 300); // Delay agar efek smooth terlihat
+          }, 1000);
+        } else {
+          // Klik kedua: Tutup surat
+          envelope.classList.remove("open");
+          textElement.style.display = "none"; // Sembunyikan teks
+          // hilangkan background
+          massage.classList.remove("show-bg");
+        }
+
+        isOpen = !isOpen; // Toggle status
+      });
 
       // Perbarui Feather Icons setelah perubahan
       feather.replace();
