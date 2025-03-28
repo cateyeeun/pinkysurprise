@@ -826,7 +826,7 @@ body {
   cursor: pointer;
   background-color: var(--bp);
   color: var(--pt1);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .game-button button:hover {
