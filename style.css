@@ -140,19 +140,18 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
-  margin: 0 5%;
-  /* background-color: #b9657b; */
+  width: 100%;
+  padding: 5rem;
 }
 
-.section-i > div {
+.section-i div {
   transform: scale(0.5);
   opacity: 0;
   transition: transform 0.2s ease-in-out, opacity 0.1s ease-in-out;
 }
 
-.section-i:hover > div,
-.section-i.active > div {
+.section-i:hover div,
+.section-i.active div {
   transform: scale(1);
   opacity: 1;
 }
