@@ -22,6 +22,11 @@ html,
 body {
   font-family: "Chewy", sans-serif;
   overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .video-bg {
@@ -42,6 +47,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-attachment: fixed;
 }
 
 .header-i {
@@ -273,6 +279,10 @@ body {
   .surat-container .pesan .love-text {
     font-size: 1.4rem !important;
   }
+
+  .surat-container .pesan .amplop:hover {
+    width: 14rem;
+  }
 }
 
 /* mobile */
@@ -399,11 +409,12 @@ body {
 
 /* surprise.html */
 .body-s1 {
-  overflow: hidden;
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 .memories {
@@ -797,13 +808,11 @@ body {
   width: 14rem;
   transition: top 0.5s ease, transform 0.5s ease;
   transition: 0.3s ease;
-  /* animation: pulseAnim 1s infinite alternate ease-in-out; */
 }
 
 .surat-container .pesan .amplop.open {
   top: -5%;
-  transform: translate(-50%, -50%) scale(1.1);
-  /* animation: none; */
+  transform: translate(-50%, -50%);
 }
 
 .surat-container .pesan .amplop:hover {
@@ -835,7 +844,7 @@ body {
   font-family: "Chewy", sans-serif;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-  box-shadow: 2px 2px 4px var(--ct);
+  box-shadow: 2px 2px 4px var(--pt);
   cursor: pointer;
   background-color: var(--bp);
   color: var(--pt1);
