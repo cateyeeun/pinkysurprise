@@ -33,8 +33,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
 }
@@ -56,7 +56,8 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100%;
-  /* margin: 5%; */
+  position: relative;
+  z-index: 1;
 }
 
 .header-i .photo {
@@ -148,6 +149,8 @@ body {
   flex-direction: column;
   width: 100%;
   padding: 5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .section-i div {
@@ -421,6 +424,8 @@ body {
   display: block;
   width: 100vw;
   margin-bottom: 5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .memories-container {
@@ -560,6 +565,8 @@ body {
   margin: 5rem 3rem;
   border-radius: 2rem;
   backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
 }
 
 .lyrics .lyrics-container {
@@ -777,6 +784,8 @@ body {
   margin: 5rem 3rem;
   /* background-color: var(--cream-t); */
   border-radius: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .surat-container .pesan {
@@ -837,6 +846,8 @@ body {
   display: flex;
   justify-content: center;
   padding: 7rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .game-button button {
