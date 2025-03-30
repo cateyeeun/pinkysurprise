@@ -32,6 +32,22 @@
       Browser Anda tidak mendukung tag video.
     </video>
 
+    <div class="navbar">
+      <div class="tag-menu">
+        <button class="tag-btn">
+          <img
+            src="./file-index/surprise/tag.png"
+            alt="tag-image"
+            class="tag-img"
+          />
+        </button>
+      </div>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="game.html">Game</a>
+      </div>
+    </div>
+
     <!-- slideshow -->
     <section class="memories">
       <div class="memories-container">
@@ -100,11 +116,11 @@
         <div class="dots"></div>
       </div>
     </section>
-    
+
     <section class="surat-container">
       <div class="pesan">
         <img
-          src="./file-index/surprise/amplop.png"
+          src="./file-index/surprise/envelop-close.png"
           alt="amplop-image"
           class="amplop"
           id="amplop"
@@ -112,7 +128,7 @@
         <p class="love-text" id="love-text"></p>
       </div>
     </section>
-    
+
     <!-- lirik lagu -->
     <section class="lyrics">
       <!-- music player -->
@@ -166,10 +182,8 @@
     </section>
 
     <div class="game-button">
-      <button onclick="window.location.href='game.html';">
-        Next?
-      </button>
-    </div>  
+      <button onclick="window.location.href='game.html';">Next?</button>
+    </div>
 
     <script>
       // SLIDESHOW
@@ -459,9 +473,14 @@
         typing();
       }
 
+      // Gambar amplop sebelum dan sesudah dibuka
+      const closedEnvelopeSrc = "./file-index/surprise/envelop-close.png"; // Gambar amplop tertutup
+      const openEnvelopeSrc = "./file-index/surprise/envelop-open.png"; // Gambar amplop terbuka
+
       envelope.addEventListener("click", function () {
         if (!isOpen) {
           // Klik pertama: Buka surat
+          envelope.src = openEnvelopeSrc; // Ganti gambar amplop terbuka
           envelope.classList.add("open");
           massage.classList.add("show-bg");
           textElement.style.display = "block"; // Munculkan teks
@@ -476,13 +495,27 @@
           }, 1000);
         } else {
           // Klik kedua: Tutup surat
+          envelope.src = closedEnvelopeSrc; // Kembalikan ke gambar amplop tertutup
           envelope.classList.remove("open");
           textElement.style.display = "none"; // Sembunyikan teks
-          // hilangkan background
-          massage.classList.remove("show-bg");
+          massage.classList.remove("show-bg"); // Hilangkan background
         }
 
         isOpen = !isOpen; // Toggle status
+      });
+      // toggle tag menu
+      const Menu = document.querySelector(".menu");
+
+      document.querySelector(".tag-btn").onclick = () => {
+        Menu.classList.toggle("active");
+      };
+
+      const tagMenu = document.querySelector(".tag-btn");
+
+      document.addEventListener("click", function (e) {
+        if (!tagMenu.contains(e.target) && !Menu.contains(e.target)) {
+          Menu.classList.remove("active");
+        }
       });
 
       // Perbarui Feather Icons setelah perubahan

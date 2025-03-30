@@ -420,6 +420,67 @@ body {
   background-attachment: fixed;
 }
 
+.navbar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 4%;
+  left: 2%;
+  z-index: 998;
+  gap: 1rem;
+}
+
+.navbar .tag-menu .tag-btn {
+  background: none;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.navbar .tag-menu .tag-btn:hover {
+  transform: scale(1.2);
+}
+
+.navbar .tag-menu .tag-btn .tag-img{
+  width: 8rem;
+  filter: drop-shadow(0 0 5px var(--cream));
+}
+
+.navbar .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  position: absolute;
+  top: 100%;
+  left: -163%;
+  transition: 0.1s ease-in-out;
+}
+
+.navbar .menu.active {
+  left: 0;
+}
+
+.navbar .menu a {
+  display: inline-block;
+  font-size: 1.3rem;
+  color: var(--pt1);
+  background-color: var(--cream);
+  padding: 0.5rem 4rem;
+  border-radius: 2rem;
+  border: solid 2px var(--pt);
+  text-align: center;
+  box-shadow: 0 0 4px var(--pp);
+  transition: transform 0.2s ease;
+}
+
+.navbar .menu a:hover {
+  transform: scale(1.1);
+  color: var(--bt);
+  border: solid 2px var(--bt);
+  box-shadow: 0 0 4px var(--bp);
+  background-color: rgb(220, 248, 255);
+}
+
 .memories {
   display: block;
   width: 100vw;
@@ -643,7 +704,7 @@ body {
 .lyrics .album-container {
   color: var(--bp);
   -webkit-text-stroke: 0.3px var(--bt);
-  text-shadow: 4px 4px 18px rgba(0, 0, 0, 0.253);
+  text-shadow: 0 0 10px var(--bp);
   width: 20%;
   height: 28rem;
   display: flex;
@@ -659,7 +720,7 @@ body {
 .lyrics .album-container .song-image .img-song img {
   width: 100%;
   border-radius: 1rem;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.253);
+  box-shadow: 0 0 10px var(--bp);
 }
 
 .lyrics .album-container .song-image .name-song h3 {
@@ -749,30 +810,12 @@ body {
 }
 
 .bg-music-controls .range-music input[type="range"] {
-  -webkit-appearance: none;
   width: 50%;
   height: 3px;
-  background: linear-gradient(to right, white 20%, gray 20%);
+  background: var(--cream);
   border-radius: 5px;
   transition: 0.2s;
   cursor: pointer;
-}
-
-.bg-music-controls .range-music input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  /* width: 10px;
-    height: 10px; */
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  background: var(--cream);
-  border-radius: 50%;
-}
-
-.bg-music-controls
-  .range-music
-  input[type="range"]::-webkit-slider-thumb:hover {
-  width: 10px;
-  height: 10px;
 }
 
 .surat-container {
@@ -817,6 +860,7 @@ body {
   width: 14rem;
   transition: top 0.5s ease, transform 0.5s ease;
   transition: 0.3s ease;
+  filter: drop-shadow(0 0 10px var(--cream));
 }
 
 .surat-container .pesan .amplop.open {
