@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Game</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="body-g">
+    <div class="navbar">
+      <div class="tag-menu">
+        <button class="tag-btn">
+          <img
+            src="./file-index/surprise/tag.png"
+            alt="tag-image"
+            class="tag-img"
+          />
+        </button>
+      </div>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="surprise.html">Memories</a>
+        <a href="ending.html">Last</a>
+      </div>
+    </div>
+
+    <section class="title-s1">
+      <h1>Mini <span>Game</span></h1>
+    </section>
+
+    <section class="games-container">
+      <div class="questions">
+        <img
+          src="./file-index/game/cloud-img.png"
+          alt="awan"
+          class="cloud-right"
+        />
+        <h2 class="title-game">Coba Tebak!</h2>
+
+        <div class="question-container">
+          <p id="question">Kapan tanggal jadian kita?</p>
+          <input type="text" id="answer" placeholder="Jawabanmu..." />
+          <button onclick="checkAnswer()">Jawab</button>
+          <div class="popup" id="popup"></div>
+        </div>
+        <img
+          src="./file-index/game/cloud-img.png"
+          alt="awan"
+          class="cloud-left"
+        />
+      </div>
+
+      <div class="puzzel">
+        <img
+          src="./file-index/game/cloud-img.png"
+          alt="awan"
+          class="cloud-right"
+        />
+        <h2 class="title-game">Puzzle Foto</h2>
+
+        <div class="puzzle-child">
+          <div class="puzzle-container" id="grid">
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+          </div>
+
+          <div class="image-example">
+            <img src="./file-index/index/polaroid1.png" alt="" />
+          </div>
+
+          <img
+            src="./file-index/game/pieces-puzzel/1.png"
+            alt="piece1"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/2.png"
+            alt="piece2"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/3.png"
+            alt="piece3"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/4.png"
+            alt="piece4"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/5.png"
+            alt="piece5"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/6.png"
+            alt="piece6"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/7.png"
+            alt="piece7"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/8.png"
+            alt="piece8"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/9.png"
+            alt="piece9"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/10.png"
+            alt="piece10"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/11.png"
+            alt="piece11"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/12.png"
+            alt="piece12"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/13.png"
+            alt="piece13"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/14.png"
+            alt="piece14"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/15.png"
+            alt="piece15"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/16.png"
+            alt="piece16"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/17.png"
+            alt="piece17"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/18.png"
+            alt="piece18"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/19.png"
+            alt="piece19"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/20.png"
+            alt="piece20"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/21.png"
+            alt="piece21"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/22.png"
+            alt="piece22"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/23.png"
+            alt="piece23"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/24.png"
+            alt="piece24"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+          <img
+            src="./file-index/game/pieces-puzzel/25.png"
+            alt="piece25"
+            class="drag-img"
+            style="width: 100px; height: 100px"
+          />
+        </div>
+
+        <img
+          src="./file-index/game/cloud-img.png"
+          alt="awan"
+          class="cloud-left"
+        />
+      </div>
+    </section>
+
+    <script>
+      // toggle tag menu
+      const Menu = document.querySelector(".menu");
+
+      document.querySelector(".tag-btn").onclick = () => {
+        Menu.classList.toggle("active");
+      };
+
+      const tagMenu = document.querySelector(".tag-btn");
+
+      document.addEventListener("click", function (e) {
+        if (!tagMenu.contains(e.target) && !Menu.contains(e.target)) {
+          Menu.classList.remove("active");
+        }
+      });
+
+      // Game Tebak Kenangan
+      let questions = [
+        { question: "Kapan tanggal jadian kita?", answer: "23 September 2022" },
+        {
+          question: "Kapan aku ulang tahun?",
+          answer: "4 September 2006",
+        },
+        { question: "Apa warna kesukaan aku?", answer: "Pink" },
+      ];
+
+      let currentQuestion = 0;
+
+      function loadQuestion() {
+        document.getElementById("question").innerText =
+          questions[currentQuestion].question;
+      }
+
+      function checkAnswer() {
+        let userAnswer = document.getElementById("answer").value;
+        let popup = document.getElementById("popup");
+
+        if (
+          userAnswer.trim().toLowerCase() ===
+          questions[currentQuestion].answer.toLowerCase()
+        ) {
+          currentQuestion++;
+          if (currentQuestion < questions.length) {
+            popup.innerHTML =
+              "Benar! Kamu ingat! ❤️ <br><br> Lanjut ke pertanyaan berikutnya.";
+            popup.style.display = "flex";
+            setTimeout(() => {
+              popup.style.display = "none";
+              document.getElementById("answer").value = "";
+              loadQuestion();
+            }, 2000);
+          } else {
+            popup.innerHTML =
+              "Selamat! Kamu menyelesaikan semua pertanyaan 🎉💗 <br><button onclick='restartGame()'>Mainkan Lagi</button>";
+            popup.style.display = "flex";
+            popup.style.flexDirection = "column";
+            popup.style.gap = "1rem";
+          }
+        } else {
+          popup.innerText = "Jawaban salah, coba lagi!";
+          popup.style.display = "flex";
+          setTimeout(() => {
+            popup.style.display = "none";
+            loadQuestion();
+          }, 2000);
+        }
+      }
+
+      function restartGame() {
+        currentQuestion = 0;
+        loadQuestion();
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("answer").value = "";
+      }
+
+      // Game Puzzle
+      const images = document.querySelectorAll(".drag-img");
+      const gridBoxes = document.querySelectorAll(".child");
+      let zIndex = 1;
+
+      images.forEach((img) => {
+        img.addEventListener("mousedown", (e) => {
+          let shiftX = e.clientX - img.getBoundingClientRect().left;
+          let shiftY = e.clientY - img.getBoundingClientRect().top;
+
+          img.classList.add("dragging");
+          img.style.zIndex = ++zIndex;
+          img.style.position = "absolute";
+          document.body.appendChild(img);
+
+          function moveAt(pageX, pageY) {
+            img.style.left = pageX - shiftX + "px";
+            img.style.top = pageY - shiftY + "px";
+          }
+
+          moveAt(e.pageX, e.pageY);
+
+          function onMouseMove(e) {
+            moveAt(e.pageX, e.pageY);
+          }
+
+          document.addEventListener("mousemove", onMouseMove);
+
+          document.addEventListener("mouseup", function onMouseUp(e) {
+            document.removeEventListener("mousemove", onMouseMove);
+            document.removeEventListener("mouseup", onMouseUp);
+            img.classList.remove("dragging");
+
+            let dropped = false;
+            gridBoxes.forEach((box) => {
+              const boxRect = box.getBoundingClientRect();
+              if (
+                e.clientX > boxRect.left &&
+                e.clientX < boxRect.right &&
+                e.clientY > boxRect.top &&
+                e.clientY < boxRect.bottom
+              ) {
+                if (box.children.length === 0) {
+                  box.appendChild(img);
+                  img.style.position = "static";
+                  dropped = true;
+                }
+              }
+            });
+
+            if (!dropped) {
+              document.body.appendChild(img);
+              img.style.position = "absolute";
+            }
+          });
+        });
+
+        img.ondragstart = () => false;
+      });
+
+      loadQuestion();
+      feather.replace();
+    </script>
+  </body>
+</html>
