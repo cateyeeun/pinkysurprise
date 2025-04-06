@@ -1036,7 +1036,6 @@ body {
 }
 
 .games-container .cloud-right {
-  /* position: absolute; */
   z-index: 1;
   top: -12%;
   right: -10%;
@@ -1044,7 +1043,6 @@ body {
 }
 
 .games-container .cloud-left {
-  /* position: absolute; */
   z-index: 1;
   bottom: -12%;
   left: -10%;
@@ -1119,7 +1117,6 @@ body {
 
 .games-container .questions .question-container .popup {
   display: none;
-  /* position: absolute; */
   background-color: var(--cream);
   border-radius: 0.5rem;
   box-shadow: none;
@@ -1193,7 +1190,6 @@ body {
 
 .puzzel .puzzle-child .pieces-pieces .drag-img {
   width: 9%;
-  /* position: absolute; */
   cursor: grab;
   transition: all 0.3s ease;
 }
