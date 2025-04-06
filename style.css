@@ -339,6 +339,10 @@ body {
   .puzzel .puzzle-child .pieces-pieces .drag-img {
     width: 13% !important;
   }
+
+  .body-g {
+    background-attachment: scroll !important;
+  }
 }
 
 /* mobile */
