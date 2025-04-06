@@ -977,7 +977,7 @@ body {
 
 /* game html */
 .body-g {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   scroll-behavior: smooth;
   background-image: url("./file-index/game/catblue.jpg");
@@ -988,7 +988,61 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  position: relative;
   /* backdrop-filter: blur(2px); */
+}
+
+.body-g .cloud-right-q {
+  position: absolute;
+  z-index: 1;
+  top: 5%;
+  right: 0;
+  width: 20rem;
+}
+
+.body-g .cloud-left-q {
+  position: absolute;
+  z-index: 1;
+  top: 35%;
+  left: 0;
+}
+
+.body-g .cloud-right-p {
+  position: absolute;
+  z-index: 1;
+  top: 40%;
+  right: 0;
+}
+
+.body-g .cloud-left-p {
+  position: absolute;
+  z-index: 1;
+  top: 90%;
+  left: 0;
+}
+
+.body-g .cloud-right-q,
+.body-g .cloud-left-q,
+.body-g .cloud-right-p,
+.body-g .cloud-left-p {
+  animation: float 5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 10px var(--yel));
+  will-change: transform;
+  max-width: 20rem;
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-12px);
+  }
+
+  100% {
+    transform: translateX(12px);
+  }
 }
 
 .games-container {
@@ -1000,7 +1054,6 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 5rem;
-  position: relative;
 }
 
 .games-container .questions,
@@ -1035,40 +1088,6 @@ body {
   flex-direction: column;
 }
 
-.games-container .cloud-right {
-  z-index: 1;
-  top: -12%;
-  right: -10%;
-  width: 20rem;
-}
-
-.games-container .cloud-left {
-  z-index: 1;
-  bottom: -12%;
-  left: -10%;
-  width: 20rem;
-}
-
-.games-container .cloud-right,
-.games-container .cloud-left {
-  animation: float 5s ease-in-out infinite alternate;
-  filter: drop-shadow(0 0 10px var(--yel));
-  will-change: transform;
-}
-
-@keyframes float {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(-12px);
-  }
-
-  100% {
-    transform: translateX(12px);
-  }
-}
 
 .games-container .questions .question-container {
   margin: 1rem 0;
@@ -1117,6 +1136,7 @@ body {
 
 .games-container .questions .question-container .popup {
   display: none;
+  position: absolute;
   background-color: var(--cream);
   border-radius: 0.5rem;
   box-shadow: none;
@@ -1190,6 +1210,7 @@ body {
 
 .puzzel .puzzle-child .pieces-pieces .drag-img {
   width: 9%;
+  position: absolute;
   cursor: grab;
   transition: all 0.3s ease;
 }
