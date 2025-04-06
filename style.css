@@ -339,10 +339,6 @@ body {
   .puzzel .puzzle-child .pieces-pieces .drag-img {
     width: 13% !important;
   }
-
-  .body-g {
-    background-attachment: scroll !important;
-  }
 }
 
 /* mobile */
@@ -981,19 +977,22 @@ body {
 
 /* game html */
 .body-g {
-  min-height: 100%;
-  width: 100%;
-  scroll-behavior: smooth;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.body-g::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image: url("./file-index/game/catblue.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  /* backdrop-filter: blur(2px); */
+  z-index: -1;
+  transform: translateZ(0); /* paksa GPU rendering untuk lebih smooth */
 }
 
 .body-g .cloud-right-q {
