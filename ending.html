@@ -1,11 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Closing</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="body-e">
+    <div class="navbar">
+      <div class="tag-menu">
+        <button class="tag-btn">
+          <img
+            src="./file-index/surprise/tag.png"
+            alt="tag-image"
+            class="tag-img"
+          />
+        </button>
+      </div>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="surprise.html">Our Memories</a>
+        <a href="game.html">Mini Game</a>
+      </div>
+    </div>
+
+    <section class="last-container">
+      <div class="video-container">
+        <div class="title-s1">
+          <h1><span>This is for</span> you <3</h1>
+        </div>
+        <div class="last-video">
+          <div class="message-vd">
+            <video controls>
+              <source src="./file-index/last/vd-last.mp4" type="video/mp4" />
+              Browser kamu tidak mendukung video tag.
+            </video>
+          </div>
+          <div class="ket">
+            <div class="text">
+              <h3>Happy Birthday</h3>
+              <p>14 April 2025</p>
+            </div>
+            <img src="./file-index/last/three-bunny.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="last-massage">
+        <div class="title-s1">
+          <h1>Last <span>Massage</span></h1>
+        </div>
+        <div class="massage-container">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ea
+            excepturi, est hic doloribus perspiciatis, aliquam in modi dicta
+            accusamus, accusantium porro tenetur consequatur exercitationem
+            placeat veniam! Id, nam eius?
+          </p>
+        </div>
+      </div>
+
+      <div class="reply">
+        <button
+          class="wa"
+          onclick="window.location.href='089621696568';"
+        >
+          <i data-feather="phone" class="phone"></i>
+          <p>Give your reply</p>
+        </button>
+      </div>
+    </section>
+
+    <script>
+      // toggle tag menu
+      const Menu = document.querySelector(".menu");
+
+      document.querySelector(".tag-btn").onclick = () => {
+        Menu.classList.toggle("active");
+      };
+
+      const tagMenu = document.querySelector(".tag-btn");
+
+      document.addEventListener("click", function (e) {
+        if (!tagMenu.contains(e.target) && !Menu.contains(e.target)) {
+          Menu.classList.remove("active");
+        }
+      });
+
+      feather.replace();
+    </script>
+  </body>
 </html>
