@@ -472,6 +472,14 @@ body {
     right: -13%;
     top: -10%;
   }
+
+  .last-container .video-container .last-video {
+    width: 90% !important;
+  }
+
+  .last-container .last-massage .massage-container p {
+    width: 80% !important;
+  }
 }
 
 @media (max-width: 375px) {
