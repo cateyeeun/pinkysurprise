@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>surprise</title>
+    <title>Our Memories</title>
+    <link rel="icon" type="image/png" href="teddy.png" />
     <link rel="stylesheet" href="style.css" />
 
     <!-- fonts -->
@@ -59,49 +60,58 @@
           <div class="slideshow-container">
             <div class="slides">
               <div class="slide">
-                <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
+                <img src="./file-index/surprise/ (1).jpeg" alt="Kenangan 1" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+                <img src="./file-index/surprise/ (2).jpeg" alt="Kenangan 2" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
+                <img src="./file-index/surprise/ (3).jpeg" alt="Kenangan 3" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
+                <img src="./file-index/surprise/ (4).jpeg" alt="Kenangan 4" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+                <img src="./file-index/surprise/ (5).jpeg" alt="Kenangan 5" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
+                <img src="./file-index/surprise/ (6).jpeg" alt="Kenangan 6" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+                <img src="./file-index/surprise/ (1).jpeg" alt="Kenangan 1" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
+                <img src="./file-index/surprise/ (2).jpeg" alt="Kenangan 2" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
+                <img src="./file-index/surprise/ (3).jpeg" alt="Kenangan 3" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+                <img src="./file-index/surprise/ (4).jpeg" alt="Kenangan 4" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/1.jpg" alt="Kenangan 1" />
+                <img src="./file-index/surprise/ (5).jpeg" alt="Kenangan 5" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+                <img src="./file-index/surprise/ (6).jpeg" alt="Kenangan 6" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/3.jpg" alt="Kenangan 3" />
+                <img src="./file-index/surprise/ (1).jpeg" alt="Kenangan 1" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/1.jpg" alt="Kenangan 4" />
+                <img src="./file-index/surprise/ (2).jpeg" alt="Kenangan 2" />
               </div>
               <div class="slide">
-                <img src="./file-index/surprise/2.jpg" alt="Kenangan 2" />
+                <img src="./file-index/surprise/ (3).jpeg" alt="Kenangan 3" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/ (4).jpeg" alt="Kenangan 4" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/ (5).jpeg" alt="Kenangan 5" />
+              </div>
+              <div class="slide">
+                <img src="./file-index/surprise/ (6).jpeg" alt="Kenangan 6" />
               </div>
             </div>
 
@@ -142,7 +152,10 @@
       </audio>
 
       <div class="album-container">
-        <div class="song-image" onclick="window.location.href='https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v?si=e9baa77ed31d4cd5';">
+        <div
+          class="song-image"
+          onclick="window.location.href='https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v?si=e9baa77ed31d4cd5';"
+        >
           <div class="img-song">
             <img src="./file-index/surprise/perfect.png" alt="image-perfect" />
           </div>
@@ -192,8 +205,8 @@
       const slides = document.querySelectorAll(".slide");
       const dotsContainer = document.querySelector(".dots");
 
-      // Buat navigasi dots hanya untuk slide ke-3 hingga ke-13
-      for (let i = 2; i <= 12; i++) {
+      // Buat navigasi dots hanya untuk slide ke-3 hingga ke-16
+      for (let i = 2; i <= 15; i++) {
         const dot = document.createElement("span");
         dot.classList.add("dot");
         dot.setAttribute("onclick", `currentSlide(${i})`);
@@ -203,8 +216,8 @@
       const dots = document.querySelectorAll(".dot");
 
       function showSlide(n) {
-        if (n > 12) slideIndex = 2; // Jika sudah sampai slide ke-13, kembali ke slide ke-3
-        if (n < 2) slideIndex = 12; // Jika mundur sebelum slide ke-3, kembali ke slide ke-13
+        if (n > 15) slideIndex = 2; // Jika sudah sampai slide ke-13, kembali ke slide ke-3
+        if (n < 2) slideIndex = 15; // Jika mundur sebelum slide ke-3, kembali ke slide ke-16
 
         document.querySelector(".slides").style.transform = `translateX(-${
           slideIndex * 100
@@ -455,7 +468,11 @@
       const massage = document.querySelector(".pesan");
       let isOpen = false; // Menyimpan status apakah surat sudah terbuka
 
-      const loveText = `"Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolore distinctio corrupti obcaecati! Ipsam, atque consectetur doloremque fugit dolor in corrupti necessitatibus deleniti temporibus voluptate repudiandae nostrum cum nulla repellat, odio nobis illum explicabo veniam saepe quibusdam maiores sed! Itaque placeat illo fugiat dolores nostrum tenetur veritatis sequi corrupti! Culpa tempore ad ut ea. Doloribus eos inventore asperiores quod magni quae odit laboriosam repellendus, natus sunt voluptas. Quidem voluptatem eius maxime eaque aliquid ullam, ratione earum pariatur minima et perspiciatis modi sit placeat sunt sint ipsam quod. Cum laborum earum, optio, necessitatibus minima iste incidunt possimus eligendi, doloribus officia ducimus."`;
+      const loveText = `"Happy 18th, my love. Today isn’t just the celebration of your birth — it’s a celebration of the incredible person you are and everything you’re yet to become. I hope the year ahead is kind to you. I hope the roads you take, even the uncertain ones, lead you to places filled with purpose and passion. May your dreams grow even bolder, and may success follow you gently but surely, because someone like you deserves the very best life has to offer.
+
+I pray you're always protected — your heart, your mind, your journey. That you're surrounded by people who bring light, laughter, and warmth into your days. May you stay in good health, physically and emotionally, and may your family be kept safe, blessed, and happy always. They've raised someone absolutely brilliant.
+
+And for us… I just want to say I believe in what we have. Truly, deeply. I believe in the way we love, the way we grow, and the way we bring each other peace. I hope we keep choosing each other through all of life’s ups and downs. I hope we stay soft with one another, even when life gets hard. And no matter where we go or how things change, I’ll always carry you with me — in the quiet parts of my heart where you’ve made your home."`;
 
       function typeWriter(text, element, speed = 15) {
         let index = 0;

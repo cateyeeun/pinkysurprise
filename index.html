@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Surprise</title>
+    <link rel="icon" type="image/png" href="teddy.png">
     <link rel="stylesheet" href="style.css" />
 
     <!-- fonts -->
@@ -30,10 +31,7 @@
     <section class="section-i">
       <div class="konten1">
         <h2>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni,
-          possimus reprehenderit! Velit unde sed inventore nostrum molestiae
-          culpa deleniti quas voluptatibus expedita aliquam officia modi, animi
-          voluptate dolore maiores corrupti.
+          You’ve turned 18 today, and all I can think about is how proud I am of the man you’re becoming. You’ve got this quiet strength, this warmth, and that cheeky charm I can never quite resist. Loving you feels like the most natural thing in the world — like breathing, or hearing my favourite song. Thank you for making me feel safe, seen, and completely adored. I hope this year brings you everything you’ve been dreaming of… and know that I’ll be right here, cheering you on, loving you more every day.
         </h2>
         <img src="./file-index/index/panah.png" alt="panah-icon" class="panah">
       </div>
@@ -50,11 +48,11 @@
           let container = document.querySelector(".t-h1");
           container.innerHTML = ""; // Menghapus teks yang ada
 
-          let text = "Happy Birthday My Boy <3"; // Pastikan ada spasi antar kata
+          let text = "To the boy who stole my heart - happy 18th, darling"; // Pastikan ada spasi antar kata
           text.split(" ").forEach((word, index) => {
             let span = document.createElement("span");
             span.innerHTML = word + "&nbsp;"; // Menambahkan spasi agar kata tetap terpisah
-            span.style.animation = `growText 0.5s ease-in-out ${
+            span.style.animation = `growText 0.3s ease-in-out ${
               index * 0.2
             }s forwards`;
 
